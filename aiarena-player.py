@@ -93,4 +93,5 @@ while True:
         startbattle()
     except Exception as e:
         print(e)
-        print("Something failed! Trying again...")
+        print("Something failed! Trying again in 10 seconds...")
+        time.sleep(10)
