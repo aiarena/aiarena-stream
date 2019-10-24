@@ -84,4 +84,8 @@ def startbattle():
 # Main Loop
 while True:
     #os.system('cls')
-    startbattle()
+    try:
+        startbattle()
+    except Exception as e:
+        print(e)
+        print("Something failed! Trying again...")
