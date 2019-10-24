@@ -1,3 +1,5 @@
+import traceback
+
 import requests
 import json
 import urllib.request, urllib.error
@@ -92,6 +94,6 @@ while True:
     try:
         startbattle()
     except Exception as e:
-        print(e)
+        traceback.print_exc()
         print("Something failed! Trying again in 10 seconds...")
         time.sleep(10)
