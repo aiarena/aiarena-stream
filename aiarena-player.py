@@ -17,8 +17,6 @@ statefile = ("state.txt")
 if not os.path.exists(temp_path):
     os.makedirs(temp_path)
 
-token = 'token'
-
 already_visited = []
 
 
