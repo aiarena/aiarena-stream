@@ -2,7 +2,10 @@ import requests
 import json
 import urllib.request, urllib.error
 import os
+import glob
+import time
 
+requests.adapters.DEFAULT_RETRIES = 500000000
 
 script_path = os.path.dirname(os.path.abspath(__file__))
 temp_path = (script_path + '\\temp\\')
@@ -18,11 +21,11 @@ already_visited = []
 
 def startbattle():
     # delete temp files
-    #tempfilelist = glob.glob(os.path.join(temp_path, "*.*"))
-    #for tempfile in tempfilelist:
+    # tempfilelist = glob.glob(os.path.join(temp_path, "*.*"))
+    # for tempfile in tempfilelist:
     #    os.remove(tempfile)
 
-	# get results from API
+    # get results from API
     r = requests.get('https://ai-arena.net/api/results/?ordering=-created', headers={'Authorization': "Token " + token})
     r.text
     data = json.loads(r.text)
@@ -49,17 +52,17 @@ def startbattle():
         return
 
     # We dont want to show Tie Games
-    if battle['duration'] >= 60480:
+    if battle['game_steps'] >= 60480:
         return
 
     print(str(battle['bot1_name'] + " vs " + str(battle['bot2_name'])))
 
     if os.path.isfile(statefile):
-        os.remove(statefile)	
-    f=open(statefile, "a+")
+        os.remove(statefile)
+    f = open(statefile, "a+")
     f.write("Game: " + str(battleid) + "\n")
     f.close()
-		
+
     replaysave = temp_path + str(battleid) + ".Sc2Replay"
 
     # download replay
@@ -74,16 +77,18 @@ def startbattle():
     print("Winner: " + str(winner))
 
     # rename bots
-    if 'bot1_name' in battle:
-        print("BotReplayRename.exe \"" + replaysave + "\"" + " foo5679 " + battle['bot1_name'] + " foo5680 " + battle['bot2_name'])
-        os.system("BotReplayRename.exe \"" + replaysave + "\"" + " foo5679 " + battle['bot1_name'] + " foo5680 " + battle['bot2_name'])
+    # if 'bot1_name' in battle:
+    #    print("BotReplayRename.exe \"" + replaysave + "\"" + " foo5679 " + battle['bot1_name'] + " foo5680 " + battle['bot2_name'])
+    #    os.system("BotReplayRename.exe \"" + replaysave + "\"" + " foo5679 " + battle['bot1_name'] + " foo5680 " + battle['bot2_name'])
 
     # run Observer
     os.system("ExampleObserver.exe --Path \"" + replaysave + "\"")
+    # os.system("ExampleObserver.exe --Path \"" + replaysave + "\" --data_version B89B5D6FA7CBF6452E721311BFBC6CB2")
+
 
 # Main Loop
 while True:
-    #os.system('cls')
+    # os.system('cls')
     try:
         startbattle()
     except Exception as e:
