@@ -83,7 +83,9 @@ def startbattle():
     #    os.system("BotReplayRename.exe \"" + replaysave + "\"" + " foo5679 " + battle['bot1_name'] + " foo5680 " + battle['bot2_name'])
 
     # run Observer
-    os.system("ExampleObserver.exe --Path \"" + replaysave + "\"")
+    cmd = "ExampleObserver.exe --Path \"" + replaysave + "\""
+    print("Running command:\n" + cmd)
+    os.system(cmd)
     # os.system("ExampleObserver.exe --Path \"" + replaysave + "\" --data_version B89B5D6FA7CBF6452E721311BFBC6CB2")
 
 
