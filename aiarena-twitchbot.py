@@ -27,8 +27,8 @@ async def event_message(message):
 
 
 # Register a command with the bot
-@bot.command(name='skip', aliases=['s'])
-async def skip_command(ctx):
+@bot.command(name='next', aliases=['n'])
+async def next_command(ctx):
     if ctx.author.is_mod:
         await ctx.send(f'Okay {ctx.author.name} - I will restart Sc2! - Please wait')
         os.system("taskkill /f /im SC2_x64.exe")
