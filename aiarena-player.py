@@ -28,7 +28,6 @@ def startbattle():
 
     # get results from API
     r = requests.get('https://ai-arena.net/api/results/?ordering=-created', headers={'Authorization': "Token " + token})
-    r.text
     data = json.loads(r.text)
 
     # results are ordered by match id from lowest to highest.
@@ -39,7 +38,7 @@ def startbattle():
     for battle in reversed(data['results']):
         if battle['id'] not in already_visited:
             already_visited.append(battle['id'])
-            found_new_game = True;
+            found_new_game = True
             break
     if not found_new_game:
         already_visited.clear()
@@ -76,11 +75,6 @@ def startbattle():
     print("Round " + str(battleid))
     print("----------\n")
     print("Winner: " + str(winner))
-
-    # rename bots
-    # if 'bot1_name' in battle:
-    #    print("BotReplayRename.exe \"" + replaysave + "\"" + " foo5679 " + battle['bot1_name'] + " foo5680 " + battle['bot2_name'])
-    #    os.system("BotReplayRename.exe \"" + replaysave + "\"" + " foo5679 " + battle['bot1_name'] + " foo5680 " + battle['bot2_name'])
 
     # run Observer
     cmd = "ExampleObserver.exe --Path \"" + replaysave + "\""
