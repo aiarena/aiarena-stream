@@ -6,10 +6,16 @@ from config import irc_token, client_id
 # Channels is the initial channels to join, this could be a list, tuple or callable
 from util import queue_file
 
-def queue_match(match_id):
+def queue_match_replay(match_id):
     f = open(queue_file, "a+")
     f.write(str(match_id) + "\n")
     f.close()
+
+def get_queue():
+    f = open(queue_file, "r")
+    queue = f.read()
+    f.close()
+    return queue
 
 bot = commands.Bot(
     irc_token=irc_token,
@@ -53,11 +59,16 @@ async def queue_command(ctx):
                 match_id = int(ctx.content[7:])
             elif ctx.content[:3] == '!q ':
                 match_id = int(ctx.content[3:])
+            else:
+                queue = get_queue()
+                await ctx.send(f'Current queue:\n' + queue)
+                return
+
         except ValueError:
             await ctx.send(f'Sorry {ctx.author.name}, please supply a valid match id.')
 
         if match_id is not None:
-            queue_match(match_id)
+            queue_match_replay(match_id)
             await ctx.send(f'Match ID {match_id} queued')
 
 bot.run()
