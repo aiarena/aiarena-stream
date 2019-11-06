@@ -1,11 +1,12 @@
 from twitchio.ext import commands
 import os
+from config import irc_token, client_id
 
 # api token can be passed as test if not needed.
 # Channels is the initial channels to join, this could be a list, tuple or callable
 bot = commands.Bot(
-    irc_token='oauth:token',
-    api_token='test',
+    irc_token=irc_token,
+    client_id=client_id,
     nick='aiarenastream',
     prefix='!',
     initial_channels=['#aiarenastream']
