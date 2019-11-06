@@ -1,11 +1,14 @@
-import traceback
-
-import requests
 import json
-import urllib.request, urllib.error
 import os
-import glob
 import time
+import traceback
+import urllib.error
+import urllib.request
+
+import mpyq as mpyq
+import requests
+from urllib3.packages import six
+
 from config import token
 
 requests.adapters.DEFAULT_RETRIES = 500000000
@@ -18,6 +21,18 @@ if not os.path.exists(temp_path):
     os.makedirs(temp_path)
 
 already_visited = []
+
+
+# from https://github.com/danielvschoor/python-sc2/blob/develop/sc2/main.py#L473
+def get_replay_data_version(replay_path):
+    with open(replay_path, "rb") as f:
+        replay_data = f.read()
+        replay_io = six.BytesIO()
+        replay_io.write(replay_data)
+        replay_io.seek(0)
+        archive = mpyq.MPQArchive(replay_io).extract()
+        metadata = json.loads(archive[b"replay.gamemetadata.json"].decode("utf-8"))
+        return metadata['DataVersion']
 
 
 def startbattle():
@@ -82,8 +97,10 @@ def startbattle():
     #    print("BotReplayRename.exe \"" + replaysave + "\"" + " foo5679 " + battle['bot1_name'] + " foo5680 " + battle['bot2_name'])
     #    os.system("BotReplayRename.exe \"" + replaysave + "\"" + " foo5679 " + battle['bot1_name'] + " foo5680 " + battle['bot2_name'])
 
+    data_version = get_replay_data_version(replaysave)
+
     # run Observer
-    cmd = "ExampleObserver.exe --Path \"" + replaysave + "\""
+    cmd = "ExampleObserver.exe --Path \"" + replaysave + "\" --data_version " + data_version
     print("Running command:\n" + cmd)
     os.system(cmd)
     # os.system("ExampleObserver.exe --Path \"" + replaysave + "\" --data_version B89B5D6FA7CBF6452E721311BFBC6CB2")
