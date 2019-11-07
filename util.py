@@ -21,7 +21,7 @@ def get_queue():
     cursor.execute('select match_id from match_queue')
     queue_str = ''
     for item in cursor.fetchall():
-        queue_str += str(item[0])
+        queue_str += str(item[0]) + ' '
     return queue_str
 
 
