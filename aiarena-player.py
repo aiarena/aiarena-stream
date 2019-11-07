@@ -71,7 +71,7 @@ def startbattle():
     if os.path.isfile(statefile):
         os.remove(statefile)
     f = open(statefile, "a+")
-    f.write("Game: " + str(match) + "\n")
+    f.write("Match: https://ai-arena.net/matches/" + str(match) + "/\n")
     f.close()
 
     replaysave = temp_path + str(battleid) + ".Sc2Replay"
