@@ -56,6 +56,7 @@ def startbattle():
 
     # define a few vars for easier handling
     battleid = battle['id']
+    match = battle['match']
     winner = battle['winner']
     replayfile = str(battle['replay_file'])
     if replayfile == "None":
@@ -70,7 +71,7 @@ def startbattle():
     if os.path.isfile(statefile):
         os.remove(statefile)
     f = open(statefile, "a+")
-    f.write("Game: " + str(battleid) + "\n")
+    f.write("Game: " + str(match) + "\n")
     f.close()
 
     replaysave = temp_path + str(battleid) + ".Sc2Replay"
