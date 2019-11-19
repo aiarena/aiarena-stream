@@ -1,1 +1,7 @@
 config.py
+.idea/
+venv
+
+temp/
+state.txt
+data.db
