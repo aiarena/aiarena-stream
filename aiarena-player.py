@@ -33,21 +33,18 @@ def startbattle():
         r = requests.get(f'https://ai-arena.net/api/results/?match={queued_match_id}', headers={'Authorization': "Token " + token})
         data = json.loads(r.text)
         battle = data['results'][0]
-        already_visited.append(battle['id'])
+        already_visited.append(battle['match'])
     else:
         print("No matches queued. Searching for a recently replay.")
-        # get results from API
-        r = requests.get('https://ai-arena.net/api/results/?ordering=-created', headers={'Authorization': "Token " + token})
+        # get replay from API
+        r = requests.get('https://ai-arena.net/api/stream/next-replay/', headers={'Authorization': "Token " + token})
         data = json.loads(r.text)
 
-        # results are ordered by match id from lowest to highest.
-        # we always want to show the game with the highest id that
-        # has not been shown already.
         # If there is no new games, reset.
         found_new_game = False
         for battle in reversed(data['results']):
-            if battle['id'] not in already_visited:
-                already_visited.append(battle['id'])
+            if battle['match'] not in already_visited:
+                already_visited.append(battle['match'])
                 found_new_game = True
                 break
         if not found_new_game:
@@ -55,26 +52,18 @@ def startbattle():
             return
 
     # define a few vars for easier handling
-    battleid = battle['id']
     match = battle['match']
-    winner = battle['winner']
     replayfile = str(battle['replay_file'])
     if replayfile == "None":
         return
 
-    # We dont want to show Tie Games
-    if battle['game_steps'] >= 60480:
-        return
-
     print(str(battle['bot1_name'] + " vs " + str(battle['bot2_name'])))
 
-    if os.path.isfile(statefile):
-        os.remove(statefile)
-    f = open(statefile, "a+")
+    f = open(statefile, "w")
     f.write("Match: https://ai-arena.net/matches/" + str(match) + "/\n")
     f.close()
 
-    replaysave = temp_path + str(battleid) + ".Sc2Replay"
+    replaysave = temp_path + str(match) + ".Sc2Replay"
 
     # download replay
     try:
@@ -83,9 +72,8 @@ def startbattle():
         return
 
     # print replay data to CLI
-    print("Round " + str(battleid))
+    print("Match " + str(match))
     print("----------\n")
-    print("Winner: " + str(winner))
 
     # run Observer
     cmd = "ExampleObserver.exe --Path \"" + replaysave + "\""
