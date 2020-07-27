@@ -23,9 +23,9 @@ already_visited = []
 
 def startbattle():
     # delete temp files
-    # tempfilelist = glob.glob(os.path.join(temp_path, "*.*"))
-    # for tempfile in tempfilelist:
-    #    os.remove(tempfile)
+    tempfilelist = glob.glob(os.path.join(temp_path, "*.*"))
+    for tempfile in tempfilelist:
+       os.remove(tempfile)
 
     queued_match_id = queue_pop_next_match()
     if queued_match_id is not None:
