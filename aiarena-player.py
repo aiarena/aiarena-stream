@@ -75,6 +75,11 @@ def startbattle():
     print("Match " + str(match))
     print("----------\n")
 
+    # remove chat
+    removechatcmd = "ReplayChatRemove.exe \"" + replaysave + "\""
+    print("Running command:\n" + removechatcmd)
+    os.system(removechatcmd)
+
     # run Observer
     cmd = "ExampleObserver.exe --Path \"" + replaysave + "\""
     print("Running command:\n" + cmd)
