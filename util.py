@@ -38,5 +38,15 @@ def queue_pop_next_match():
     return str(match_id)
 
 
+def is_match_id(match_id: str) -> bool:
+    try:
+        id = int(match_id)
+        if id < 1:
+            return False
+    except ValueError:
+        return False
+    return True
+
+
 if __name__ == "__main__":
     create_db()

@@ -3,7 +3,7 @@ import os
 from twitchio.ext import commands
 
 from config import irc_token, client_id
-from util import queue_match_replay, get_queue
+from util import queue_match_replay, get_queue, is_match_id
 
 # Channels is the initial channels to join, this could be a list, tuple or callable
 bot = commands.Bot(
@@ -41,29 +41,20 @@ async def next_command(ctx):
 @bot.command(name='queue', aliases=['q'])
 async def queue_command(ctx):
     if ctx.author.is_mod:
-        match_id = None
+        if ctx.content[:7] == '!queue ':
+            match_id = ctx.content[7:]
+        elif ctx.content[:3] == '!q ':
+            match_id = ctx.content[3:]
+        else:  # empty command
+            queue = get_queue()
+            await ctx.send(f'Current queue:\n' + queue)
+            return
 
-        try:
-            if ctx.content[:7] == '!queue ':
-                match_id = int(ctx.content[7:])  # test for a valid integer
-            elif ctx.content[:3] == '!q ':
-                match_id = int(ctx.content[3:])  # test for a valid integer
-            else:  # empty command
-                queue = get_queue()
-                await ctx.send(f'Current queue:\n' + queue)
-                return
-
-            # account for negative numbers
-            if match_id < 1:
-                await ctx.send(f'Sorry {ctx.author.name}, please supply a valid match id.')
-                return
-
-        except ValueError:
-            await ctx.send(f'Sorry {ctx.author.name}, please supply a valid match id.')
-
-        if match_id is not None:
+        if is_match_id(match_id):
             queue_match_replay(int(match_id))
             await ctx.send(f'Match ID {match_id} queued')
+        else:
+            await ctx.send(f'Sorry {ctx.author.name}, please supply a valid match id.')
 
 
 bot.run()
