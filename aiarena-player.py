@@ -6,7 +6,8 @@ import urllib.request, urllib.error
 import os
 import glob
 import time
-from config import token
+import config
+
 from util import queue_pop_next_match
 
 requests.adapters.DEFAULT_RETRIES = 500000000
@@ -30,14 +31,14 @@ def startbattle():
     queued_match_id = queue_pop_next_match()
     if queued_match_id is not None:
         print(f"Playing queued match id: {queued_match_id}")
-        r = requests.get(f'https://aiarena.net/api/results/?match={queued_match_id}', headers={'Authorization': "Token " + token})
+        r = requests.get(f'https://aiarena.net/api/results/?match={queued_match_id}', headers={'Authorization': "Token " + config.token})
         data = json.loads(r.text)
         battle = data['results'][0]
         already_visited.append(battle['match'])
     else:
         print("No matches queued. Searching for a recently replay.")
         # get replay from API
-        r = requests.get('https://aiarena.net/api/stream/next-replay/', headers={'Authorization': "Token " + token})
+        r = requests.get('https://aiarena.net/api/stream/next-replay/', headers={'Authorization': "Token " + config.token})
         data = json.loads(r.text)
 
         # If there is no new games, reset.
@@ -82,6 +83,8 @@ def startbattle():
 
     # run Observer
     cmd = "ExampleObserver.exe --Path \"" + replaysave + "\""
+    if hasattr(config, 'sc2path') and config.sc2path is not None:
+        cmd += f" -e {config.sc2path}"
     print("Running command:\n" + cmd)
     os.system(cmd)
     # os.system("ExampleObserver.exe --Path \"" + replaysave + "\" --data_version B89B5D6FA7CBF6452E721311BFBC6CB2")
