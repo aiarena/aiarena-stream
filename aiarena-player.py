@@ -30,14 +30,14 @@ def startbattle():
     queued_match_id = queue_pop_next_match()
     if queued_match_id is not None:
         print(f"Playing queued match id: {queued_match_id}")
-        r = requests.get(f'https://ai-arena.net/api/results/?match={queued_match_id}', headers={'Authorization': "Token " + token})
+        r = requests.get(f'https://aiarena.net/api/results/?match={queued_match_id}', headers={'Authorization': "Token " + token})
         data = json.loads(r.text)
         battle = data['results'][0]
         already_visited.append(battle['match'])
     else:
         print("No matches queued. Searching for a recently replay.")
         # get replay from API
-        r = requests.get('https://ai-arena.net/api/stream/next-replay/', headers={'Authorization': "Token " + token})
+        r = requests.get('https://aiarena.net/api/stream/next-replay/', headers={'Authorization': "Token " + token})
         data = json.loads(r.text)
 
         # If there is no new games, reset.
@@ -60,7 +60,7 @@ def startbattle():
     print(str(battle['bot1_name'] + " vs " + str(battle['bot2_name'])))
 
     f = open(statefile, "w")
-    f.write("Match: https://ai-arena.net/matches/" + str(match) + "/\n")
+    f.write("Match: https://aiarena.net/matches/" + str(match) + "/\n")
     f.close()
 
     replaysave = temp_path + str(match) + ".Sc2Replay"
