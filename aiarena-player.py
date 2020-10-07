@@ -84,9 +84,9 @@ def startbattle():
     # run Observer
     cmd = "ExampleObserver.exe -p \"" + replaysave + "\""
     if hasattr(config, 'sc2_executable') and config.sc2_executable is not None:
-        cmd += f" -e {config.sc2_executable}"
+        cmd += f" -e \"{config.sc2_executable}\""
     if hasattr(config, 'sc2_data_version') and config.sc2_data_version is not None:
-        cmd += f" -d {config.sc2_data_version}"
+        cmd += f" -d \"{config.sc2_data_version}\""
     print("Running command:\n" + cmd)
     os.system(cmd)
     # os.system("ExampleObserver.exe --Path \"" + replaysave + "\" --data_version B89B5D6FA7CBF6452E721311BFBC6CB2")
