@@ -21,6 +21,31 @@ if not os.path.exists(temp_path):
 
 already_visited = []
 
+def retrieve_match_data(match_id):
+    r = requests.get(f'https://aiarena.net/api/matches/{match_id}', headers={'Authorization': "Token " + config.token})
+    data = json.loads(r.text)
+    return data
+
+
+def retrieve_map_data(map_id):
+    r = requests.get(f'https://aiarena.net/api/maps/{map_id}', headers={'Authorization': "Token " + config.token})
+    data = json.loads(r.text)
+    return data
+
+
+def download_map(match_id):
+    match_data = retrieve_match_data(match_id)
+    map_data = retrieve_map_data(match_data["map"])
+
+    map_save_location = os.path.join(config.sc2_maps_folder, f"{map_data['name']}.Sc2Map")
+
+    try:
+        urllib.request.urlretrieve(map_data["file"], map_save_location)
+    except urllib.error.URLError as e:
+        return False
+
+    return True
+
 
 def startbattle():
     # delete temp files
@@ -63,6 +88,10 @@ def startbattle():
     f = open(statefile, "w")
     f.write("Match: https://aiarena.net/matches/" + str(match) + "/\n")
     f.close()
+
+    if not download_map(match):
+        print("Map download failed.")
+        return
 
     replaysave = temp_path + str(match) + ".Sc2Replay"
 
