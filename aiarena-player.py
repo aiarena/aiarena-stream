@@ -42,6 +42,7 @@ def download_map(match_id):
     try:
         urllib.request.urlretrieve(map_data["file"], map_save_location)
     except urllib.error.URLError as e:
+        print(e)
         return False
 
     return True
@@ -99,6 +100,7 @@ def startbattle():
     try:
         urllib.request.urlretrieve(replayfile, replaysave)
     except urllib.error.URLError as e:
+        print(e)
         return
 
     # print replay data to CLI
