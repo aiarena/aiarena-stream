@@ -61,7 +61,7 @@ def startbattle():
         battle = data['results'][0]
         already_visited.append(battle['match'])
     else:
-        print("No matches queued. Searching for a recently replay.")
+        print("No matches queued. Searching for a recent replay.")
         # get replay from API
         r = requests.get('https://aiarena.net/api/stream/next-replay/', headers={'Authorization': "Token " + config.token})
         data = json.loads(r.text)
