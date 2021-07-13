@@ -30,6 +30,22 @@ async def event_message(message):
 
 
 # Register a command with the bot
+
+# Display a help command in chat
+@bot.command(name='help', aliases=['h', 'commands'])
+async def help_command(ctx):
+    help_message = """!help - Display this message
+    Aliases: h, commands
+
+    !next - Request to move on to the next game
+    Aliases: n
+
+    !queue {GAME ID}[, MORE IDs, ...]- Add a game from AIArena to the queue using its ID with a cool-down per usage. Patreons and above may use a comma seperated list to add multiple games to the queue at once
+    Aliases: q
+    """
+    await ctx.send(f'Here you go {ctx.author.name}\n\n{help_message}')
+
+
 @bot.command(name='next', aliases=['n'])
 async def next_command(ctx):
     if ctx.author.is_mod:
