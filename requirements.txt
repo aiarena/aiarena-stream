@@ -5,7 +5,7 @@ certifi==2019.9.11
 chardet==3.0.4
 idna==2.8
 multidict==4.5.2
-requests==2.22.0
+requests==2.27.1
 twitchio==1.0.0
 urllib3==1.25.6
 websockets==9.1
