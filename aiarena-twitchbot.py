@@ -1,7 +1,8 @@
 import os
 
 from twitchio.ext import commands
-
+from pynput.keyboard import Key, Controller
+import time
 from config import irc_token, client_id
 from util import queue_match_replay, get_queue, is_match_id
 
@@ -45,6 +46,21 @@ async def help_command(ctx):
     """
     await ctx.send(f'Here you go {ctx.author.name}\n\n{help_message}')
 
+@bot.command(name='restart', aliases=['r'])
+async def restart_stream_command(ctx):
+    if ctx.author.is_mod:
+        await ctx.send(f'Okay {ctx.author.name} - I will restart the stream! - Please wait')
+        keyboard = Controller()
+        keyboard.press(Key.ctrl )
+        keyboard.press(']')
+        keyboard.release(']')
+        
+        keyboard.release(Key.ctrl )
+        time.sleep(1)
+        keyboard.press(Key.ctrl)
+        keyboard.press('[')
+        keyboard.release('[')
+        keyboard.release(Key.ctrl)
 
 @bot.command(name='next', aliases=['n'])
 async def next_command(ctx):
