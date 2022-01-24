@@ -76,12 +76,14 @@ def startbattle():
                 break
         if not found_new_game:
             already_visited.clear()
+            print("All matches viewed - resetting.")
             return
 
     # define a few vars for easier handling
     match = battle['match']
     replayfile = str(battle['replay_file'])
     if replayfile == "None":
+        print("Replay file was None!")
         return
 
     print(str(battle['bot1_name'] + " vs " + str(battle['bot2_name'])))
