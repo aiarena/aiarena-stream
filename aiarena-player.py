@@ -8,6 +8,8 @@ import glob
 import time
 import config
 
+import pyttsx3
+
 from util import queue_pop_next_match
 
 requests.adapters.DEFAULT_RETRIES = 500000000
@@ -87,6 +89,11 @@ def startbattle():
         return
 
     print(str(battle['bot1_name'] + " vs " + str(battle['bot2_name'])))
+
+    # Text to speech
+    engine = pyttsx3.init()
+    engine.say(str(battle['bot1_name']) + " versus " + str(battle['bot2_name']))
+    engine.runAndWait()
 
     f = open(statefile, "w")
     f.write("Match: https://aiarena.net/matches/" + str(match) + "/\n")
