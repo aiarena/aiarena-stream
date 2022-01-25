@@ -92,6 +92,7 @@ def startbattle():
 
     # Text to speech
     engine = pyttsx3.init()
+    engine.setProperty('rate', 150)
     engine.say(str(battle['bot1_name']) + " versus " + str(battle['bot2_name']))
     engine.runAndWait()
 
