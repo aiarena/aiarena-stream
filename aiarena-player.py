@@ -91,13 +91,6 @@ def startbattle():
 
     print(str(battle['bot1_name'] + " vs " + str(battle['bot2_name'])))
 
-    # Text to speech
-    tts = gTTS(str(battle['bot1_name']) + " versus " + str(battle['bot2_name']), lang='en')
-    tts_file_name = os.path.join(os.path.abspath(os.getcwd()), 'current_game.mp3')
-    tts.save(tts_file_name)
-    playsound.playsound(tts_file_name)
-    os.remove(tts_file_name)
-
     f = open(statefile, "w")
     f.write("Match: https://aiarena.net/matches/" + str(match) + "/\n")
     f.close()
@@ -133,6 +126,13 @@ def startbattle():
     print("Running command:\n" + cmd)
     os.system(cmd)
     # os.system("ExampleObserver.exe --Path \"" + replaysave + "\" --data_version B89B5D6FA7CBF6452E721311BFBC6CB2")
+
+    # Text to speech match announcement
+    tts = gTTS(str(battle['bot1_name']) + " versus " + str(battle['bot2_name']), lang='en')
+    tts_file_name = os.path.join(os.path.abspath(os.getcwd()), 'current_game.mp3')
+    tts.save(tts_file_name)
+    playsound.playsound(tts_file_name)
+    os.remove(tts_file_name)
 
 
 # Main Loop
