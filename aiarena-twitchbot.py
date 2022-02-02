@@ -8,7 +8,7 @@ from util import queue_match_replay, get_queue, is_match_id
 
 # Channels is the initial channels to join, this could be a list, tuple or callable
 bot = commands.Bot(
-    irc_token=irc_token,
+    token=irc_token,
     client_id=client_id,
     nick='aiarenastream',
     prefix='!',
