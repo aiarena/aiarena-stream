@@ -8,6 +8,9 @@ import glob
 import time
 import config
 
+from gtts import gTTS
+import playsound
+
 from util import queue_pop_next_match
 
 requests.adapters.DEFAULT_RETRIES = 500000000
@@ -123,6 +126,13 @@ def startbattle():
     print("Running command:\n" + cmd)
     os.system(cmd)
     # os.system("ExampleObserver.exe --Path \"" + replaysave + "\" --data_version B89B5D6FA7CBF6452E721311BFBC6CB2")
+
+    # Text to speech match announcement
+    tts = gTTS(str(battle['bot1_name']) + " versus " + str(battle['bot2_name']), lang='en')
+    tts_file_name = os.path.join(os.path.abspath(os.getcwd()), 'current_game.mp3')
+    tts.save(tts_file_name)
+    playsound.playsound(tts_file_name)
+    os.remove(tts_file_name)
 
 
 # Main Loop
