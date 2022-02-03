@@ -38,11 +38,17 @@ async def help_command(ctx):
     help_message = """!help - Display this message
     Aliases: h, commands
 
+    !link - Request the current match's website link to be pasted into chat.
+    Aliases: l
+
     !next - Request to move on to the next game
     Aliases: n
 
     !queue {GAME ID}[, MORE IDs, ...]- Add a game from AIArena to the queue using its ID with a cool-down per usage. Patreons and above may use a comma seperated list to add multiple games to the queue at once
     Aliases: q
+
+    !restart - Restart the OBS stream.
+    Aliases: r
     """
     await ctx.send(f'Here you go {ctx.author.name}\n\n{help_message}')
 
