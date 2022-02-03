@@ -4,7 +4,7 @@ from twitchio.ext import commands
 from pynput.keyboard import Key, Controller
 import time
 from config import irc_token, client_id
-from util import queue_match_replay, get_queue, is_match_id
+from util import queue_match_replay, get_queue, is_match_id, statefile
 
 # Channels is the initial channels to join, this could be a list, tuple or callable
 bot = commands.Bot(
@@ -87,6 +87,14 @@ async def queue_command(ctx):
             await ctx.send(f'Match ID {match_id} queued')
         else:
             await ctx.send(f'Sorry {ctx.author.name}, please supply a valid match id.')
+
+
+@bot.command(name='link', aliases=['l'])
+async def queue_command(ctx):
+    """Loads the statefile content, which contains a link to the current match."""
+    with open(statefile, 'r') as file:
+        data = file.read()
+        await ctx.send(data)
 
 
 bot.run()

@@ -11,13 +11,12 @@ import config
 from gtts import gTTS
 import playsound
 
-from util import queue_pop_next_match
+from util import queue_pop_next_match, statefile
 
 requests.adapters.DEFAULT_RETRIES = 500000000
 
 script_path = os.path.dirname(os.path.abspath(__file__))
 temp_path = (script_path + '\\temp\\')
-statefile = ("state.txt")
 
 if not os.path.exists(temp_path):
     os.makedirs(temp_path)

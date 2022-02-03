@@ -1,5 +1,6 @@
 import sqlite3
 
+statefile = ("state.txt")
 database_file = "data.db"
 db = sqlite3.connect(database_file)
 
