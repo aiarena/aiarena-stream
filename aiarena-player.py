@@ -23,6 +23,21 @@ if not os.path.exists(temp_path):
 
 already_visited = []
 
+def get_bot_data_by_name(bot_name):
+    r = requests.get(f'https://aiarena.net/api/bots/?name={bot_name}', headers={'Authorization': "Token " + config.token})
+    data = json.loads(r.text)
+    return data
+    
+def retrieve_round_data(round_id):
+    r = requests.get(f'https://aiarena.net/api/rounds/{round_id}', headers={'Authorization': "Token " + config.token})
+    data = json.loads(r.text)
+    return data
+
+def get_competition_participations_data(bot_id, competition):
+    r = requests.get(f'https://sc2ai.net/api/competition-participations/?bot={bot_id}&competition={competition}', headers={'Authorization': "Token " + config.token})
+    data = json.loads(r.text)
+    return data
+
 def retrieve_match_data(match_id):
     r = requests.get(f'https://aiarena.net/api/matches/{match_id}', headers={'Authorization': "Token " + config.token})
     data = json.loads(r.text)
@@ -35,10 +50,7 @@ def retrieve_map_data(map_id):
     return data
 
 
-def download_map(match_id):
-    match_data = retrieve_match_data(match_id)
-    map_data = retrieve_map_data(match_data["map"])
-
+def download_map(map_data):
     map_save_location = os.path.join(config.sc2_maps_folder, f"{map_data['name']}.Sc2Map")
 
     try:
@@ -87,14 +99,27 @@ def startbattle():
     if replayfile == "None":
         print("Replay file was None!")
         return
+    bot1_name = str(battle['bot1_name'])
+    bot2_name = str(battle['bot2_name'])
+    match_data = retrieve_match_data(match)
+    round_data = retrieve_round_data(match_data["round"])
+    bot1_data = get_bot_data_by_name(bot1_name)["results"][0]
+    bot2_data = get_bot_data_by_name(bot2_name)["results"][0]
+    bot1_competition_data = get_competition_participations_data(bot1_data["id"], round_data["competition"])["results"][0]
+    bot2_competition_data = get_competition_participations_data(bot2_data["id"], round_data["competition"])["results"][0]
 
-    print(str(battle['bot1_name'] + " vs " + str(battle['bot2_name'])))
+    map_data = retrieve_map_data(match_data["map"])
+
+    print(bot1_name + " vs " + bot2_name)
 
     f = open(statefile, "w")
     f.write("Match: https://aiarena.net/matches/" + str(match) + "/\n")
+    
+    f.write("{0: <20} ELO: {1} WIN: {2:.2%}\n".format(bot1_name, str(bot1_competition_data["elo"]), bot1_competition_data["win_perc"] / 100.0))
+    f.write("{0: <20} ELO: {1} WIN: {2:.2%}\n".format(bot2_name, str(bot2_competition_data["elo"]), bot2_competition_data["win_perc"] / 100.0))
     f.close()
 
-    if not download_map(match):
+    if not download_map(map_data):
         print("Map download failed.")
         return
 
