@@ -1,0 +1,708 @@
+// Example of JSON returned from the website's /api/stream/next-replay/ endpoint - for assisting developers with debugging.
+{
+    "count": 813053,
+    "next": "https://aiarena.net/api/stream/next-replay/?limit=100&offset=100",
+    "previous": null,
+    "results": [
+        {
+            "match": 1298768,
+            "type": "Player1Win",
+            "replay_file": "https://aiarena.net/media/replays/1298768_Darkness_BaronessZuli_CuriousMindsAIE.SC2Replay",
+            "bot1_name": "Darkness",
+            "bot2_name": "BaronessZuli"
+        },
+        {
+            "match": 1298689,
+            "type": "Player1Win",
+            "replay_file": "https://aiarena.net/media/replays/1298689_QueenBot_MilkWang1_HardwireAIE.SC2Replay",
+            "bot1_name": "QueenBot",
+            "bot2_name": "MilkWang1"
+        },
+        {
+            "match": 1298767,
+            "type": "Player2Win",
+            "replay_file": "https://aiarena.net/media/replays/1298767_Darkness_Crustacean_BlackburnAIE.SC2Replay",
+            "bot1_name": "Darkness",
+            "bot2_name": "Crustacean"
+        },
+        {
+            "match": 1298610,
+            "type": "Player1Win",
+            "replay_file": "https://aiarena.net/media/replays/1298610_Zoe_spudde_CuriousMindsAIE.SC2Replay",
+            "bot1_name": "Zoe",
+            "bot2_name": "spudde"
+        },
+        {
+            "match": 1298736,
+            "type": "Player1Win",
+            "replay_file": "https://aiarena.net/media/replays/1298736_Tyr_BenBotBC_2000AtmospheresAIE.SC2Replay",
+            "bot1_name": "Tyr",
+            "bot2_name": "BenBotBC"
+        },
+        {
+            "match": 1298625,
+            "type": "Player1Win",
+            "replay_file": "https://aiarena.net/media/replays/1298625_EvilZoe_LucidPJS_HardwireAIE.SC2Replay",
+            "bot1_name": "EvilZoe",
+            "bot2_name": "LucidPJS"
+        },
+        {
+            "match": 1298826,
+            "type": "Player2Win",
+            "replay_file": "https://aiarena.net/media/replays/1298826_LucidZJS_LucidTJS_CuriousMindsAIE.SC2Replay",
+            "bot1_name": "LucidZJS",
+            "bot2_name": "LucidTJS"
+        },
+        {
+            "match": 1298875,
+            "type": "Player2Win",
+            "replay_file": "https://aiarena.net/media/replays/1298875_LucidTJS_Monomi_BlackburnAIE.SC2Replay",
+            "bot1_name": "LucidTJS",
+            "bot2_name": "Monomi"
+        },
+        {
+            "match": 1298642,
+            "type": "Player1Win",
+            "replay_file": "https://aiarena.net/media/replays/1298642_smallBly_Omega2A_BlackburnAIE.SC2Replay",
+            "bot1_name": "smallBly",
+            "bot2_name": "Omega2A"
+        },
+        {
+            "match": 1298396,
+            "type": "Player1Win",
+            "replay_file": "https://aiarena.net/media/replays/1298396_EmptySeat_ascyZerg003_Flat482Spawns.SC2Replay",
+            "bot1_name": "EmptySeat",
+            "bot2_name": "ascyZerg003"
+        },
+        {
+            "match": 1298408,
+            "type": "Player1Win",
+            "replay_file": "https://aiarena.net/media/replays/1298408_MFBS_BillyBot_Flat482Spawns.SC2Replay",
+            "bot1_name": "MFBS",
+            "bot2_name": "BillyBot"
+        },
+        {
+            "match": 1299007,
+            "type": "Player2Win",
+            "replay_file": "https://aiarena.net/media/replays/1299007_basic_bot_Winckel_Flat48_Flat482Spawns.SC2Replay",
+            "bot1_name": "basic_bot",
+            "bot2_name": "Winckel_Flat48"
+        },
+        {
+            "match": 1298430,
+            "type": "Player1Win",
+            "replay_file": "https://aiarena.net/media/replays/1298430_WhoNeedsArmy_ProFarTBOT_Flat482Spawns.SC2Replay",
+            "bot1_name": "WhoNeedsArmy",
+            "bot2_name": "ProFarTBOT"
+        },
+        {
+            "match": 1298374,
+            "type": "Player2Win",
+            "replay_file": "https://aiarena.net/media/replays/1298374_basic_bot_KetrocFlat48_Flat482Spawns.SC2Replay",
+            "bot1_name": "basic_bot",
+            "bot2_name": "KetrocFlat48"
+        },
+        {
+            "match": 1298433,
+            "type": "Player1Win",
+            "replay_file": "https://aiarena.net/media/replays/1298433_WhoNeedsArmy_BillyBot_Flat482Spawns.SC2Replay",
+            "bot1_name": "WhoNeedsArmy",
+            "bot2_name": "BillyBot"
+        },
+        {
+            "match": 1298410,
+            "type": "Player1Win",
+            "replay_file": "https://aiarena.net/media/replays/1298410_MFBS_ascyZerg003_Flat482Spawns.SC2Replay",
+            "bot1_name": "MFBS",
+            "bot2_name": "ascyZerg003"
+        },
+        {
+            "match": 1298496,
+            "type": "Player1Win",
+            "replay_file": "https://aiarena.net/media/replays/1298496_Winckel_Flat48_BillyBot_Flat482Spawns.SC2Replay",
+            "bot1_name": "Winckel_Flat48",
+            "bot2_name": "BillyBot"
+        },
+        {
+            "match": 1298435,
+            "type": "Player1Win",
+            "replay_file": "https://aiarena.net/media/replays/1298435_WhoNeedsArmy_ascyZerg003_Flat482Spawns.SC2Replay",
+            "bot1_name": "WhoNeedsArmy",
+            "bot2_name": "ascyZerg003"
+        },
+        {
+            "match": 1298416,
+            "type": "Player2Win",
+            "replay_file": "https://aiarena.net/media/replays/1298416_Nightmare_KetrocFlat48_Flat482Spawns.SC2Replay",
+            "bot1_name": "Nightmare",
+            "bot2_name": "KetrocFlat48"
+        },
+        {
+            "match": 1298419,
+            "type": "Player2Win",
+            "replay_file": "https://aiarena.net/media/replays/1298419_Nightmare_ArchBaronessRuri_Flat482Spawns.SC2Replay",
+            "bot1_name": "Nightmare",
+            "bot2_name": "ArchBaronessRuri"
+        },
+        {
+            "match": 1298424,
+            "type": "Player1Win",
+            "replay_file": "https://aiarena.net/media/replays/1298424_WhoNeedsArmy_SF4G_Flat482Spawns.SC2Replay",
+            "bot1_name": "WhoNeedsArmy",
+            "bot2_name": "SF4G"
+        },
+        {
+            "match": 1298366,
+            "type": "Player1Win",
+            "replay_file": "https://aiarena.net/media/replays/1298366_basic_bot_EmptySeat_Flat482Spawns.SC2Replay",
+            "bot1_name": "basic_bot",
+            "bot2_name": "EmptySeat"
+        },
+        {
+            "match": 1298991,
+            "type": "Player2Win",
+            "replay_file": "https://aiarena.net/media/replays/1298991_RookieBot_MAReaperExample_sc2-ai-cup-2022.SC2Replay",
+            "bot1_name": "RookieBot",
+            "bot2_name": "MAReaperExample"
+        },
+        {
+            "match": 1298639,
+            "type": "Player1Win",
+            "replay_file": "https://aiarena.net/media/replays/1298639_smallBly_Ender_2000AtmospheresAIE.SC2Replay",
+            "bot1_name": "smallBly",
+            "bot2_name": "Ender"
+        },
+        {
+            "match": 1298958,
+            "type": "Player2Win",
+            "replay_file": "https://aiarena.net/media/replays/1298958_MarineRush_MicroMachinePalacky_sc2-ai-cup-2022.SC2Replay",
+            "bot1_name": "MarineRush",
+            "bot2_name": "MicroMachinePalacky"
+        },
+        {
+            "match": 1298951,
+            "type": "Player2Win",
+            "replay_file": "https://aiarena.net/media/replays/1298951_WorkerRush_XenaT_sc2-ai-cup-2022.SC2Replay",
+            "bot1_name": "WorkerRush",
+            "bot2_name": "XenaT"
+        },
+        {
+            "match": 1298981,
+            "type": "Player1Win",
+            "replay_file": "https://aiarena.net/media/replays/1298981_MicroMachinePalacky_MAReaperExample_sc2-ai-cup-2022.SC2Replay",
+            "bot1_name": "MicroMachinePalacky",
+            "bot2_name": "MAReaperExample"
+        },
+        {
+            "match": 1298849,
+            "type": "Player2Win",
+            "replay_file": "https://aiarena.net/media/replays/1298849_LucidPJS_sharkbot_CuriousMindsAIE.SC2Replay",
+            "bot1_name": "LucidPJS",
+            "bot2_name": "sharkbot"
+        },
+        {
+            "match": 1298704,
+            "type": "Player1Win",
+            "replay_file": "https://aiarena.net/media/replays/1298704_Eris_DominionDog_BlackburnAIE.SC2Replay",
+            "bot1_name": "Eris",
+            "bot2_name": "DominionDog"
+        },
+        {
+            "match": 1298959,
+            "type": "Player2Win",
+            "replay_file": "https://aiarena.net/media/replays/1298959_MarineRush_XenaT_sc2-ai-cup-2022.SC2Replay",
+            "bot1_name": "MarineRush",
+            "bot2_name": "XenaT"
+        },
+        {
+            "match": 1298978,
+            "type": "Player1Win",
+            "replay_file": "https://aiarena.net/media/replays/1298978_MicroMachinePalacky_MechaSharkPalacky_sc2-ai-cup-2022.SC2Replay",
+            "bot1_name": "MicroMachinePalacky",
+            "bot2_name": "MechaSharkPalacky"
+        },
+        {
+            "match": 1298562,
+            "type": "Player1Win",
+            "replay_file": "https://aiarena.net/media/replays/1298562_SaShaBot_LucidZJS_CuriousMindsAIE.SC2Replay",
+            "bot1_name": "SaShaBot",
+            "bot2_name": "LucidZJS"
+        },
+        {
+            "match": 1298955,
+            "type": "Player2Win",
+            "replay_file": "https://aiarena.net/media/replays/1298955_WorkerRush_MAReaperExample_sc2-ai-cup-2022.SC2Replay",
+            "bot1_name": "WorkerRush",
+            "bot2_name": "MAReaperExample"
+        },
+        {
+            "match": 1298701,
+            "type": "Player1Win",
+            "replay_file": "https://aiarena.net/media/replays/1298701_Eris_MicroMachine_HardwireAIE.SC2Replay",
+            "bot1_name": "Eris",
+            "bot2_name": "MicroMachine"
+        },
+        {
+            "match": 1298617,
+            "type": "Player1Win",
+            "replay_file": "https://aiarena.net/media/replays/1298617_EvilZoe_TyrT_BerlingradAIE.SC2Replay",
+            "bot1_name": "EvilZoe",
+            "bot2_name": "TyrT"
+        },
+        {
+            "match": 1298822,
+            "type": "Player2Win",
+            "replay_file": "https://aiarena.net/media/replays/1298822_DadBot_spudde_2000AtmospheresAIE.SC2Replay",
+            "bot1_name": "DadBot",
+            "bot2_name": "spudde"
+        },
+        {
+            "match": 1298952,
+            "type": "Player2Win",
+            "replay_file": "https://aiarena.net/media/replays/1298952_WorkerRush_MechaSharkPalacky_sc2-ai-cup-2022.SC2Replay",
+            "bot1_name": "WorkerRush",
+            "bot2_name": "MechaSharkPalacky"
+        },
+        {
+            "match": 1298963,
+            "type": "Player2Win",
+            "replay_file": "https://aiarena.net/media/replays/1298963_MarineRush_MAReaperExample_sc2-ai-cup-2022.SC2Replay",
+            "bot1_name": "MarineRush",
+            "bot2_name": "MAReaperExample"
+        },
+        {
+            "match": 1298598,
+            "type": "Player2Win",
+            "replay_file": "https://aiarena.net/media/replays/1298598_Zoe_Eris_CuriousMindsAIE.SC2Replay",
+            "bot1_name": "Zoe",
+            "bot2_name": "Eris"
+        },
+        {
+            "match": 1298878,
+            "type": "Player1Win",
+            "replay_file": "https://aiarena.net/media/replays/1298878_sharkbot_Chaosbot_BlackburnAIE.SC2Replay",
+            "bot1_name": "sharkbot",
+            "bot2_name": "Chaosbot"
+        },
+        {
+            "match": 1298403,
+            "type": "Player2Win",
+            "replay_file": "https://aiarena.net/media/replays/1298403_MFBS_KetrocFlat48_Flat482Spawns.SC2Replay",
+            "bot1_name": "MFBS",
+            "bot2_name": "KetrocFlat48"
+        },
+        {
+            "match": 1298620,
+            "type": "Player1Win",
+            "replay_file": "https://aiarena.net/media/replays/1298620_EvilZoe_BenBotBC_2000AtmospheresAIE.SC2Replay",
+            "bot1_name": "EvilZoe",
+            "bot2_name": "BenBotBC"
+        },
+        {
+            "match": 1298383,
+            "type": "Player2Win",
+            "replay_file": "https://aiarena.net/media/replays/1298383_EmptySeat_Nightmare_Flat482Spawns.SC2Replay",
+            "bot1_name": "EmptySeat",
+            "bot2_name": "Nightmare"
+        },
+        {
+            "match": 1298368,
+            "type": "Player2Win",
+            "replay_file": "https://aiarena.net/media/replays/1298368_basic_bot_Nightmare_Flat482Spawns.SC2Replay",
+            "bot1_name": "basic_bot",
+            "bot2_name": "Nightmare"
+        },
+        {
+            "match": 1298685,
+            "type": "Player2Win",
+            "replay_file": "https://aiarena.net/media/replays/1298685_QueenBot_FaxBot_BerlingradAIE.SC2Replay",
+            "bot1_name": "QueenBot",
+            "bot2_name": "FaxBot"
+        },
+        {
+            "match": 1298844,
+            "type": "Player1Win",
+            "replay_file": "https://aiarena.net/media/replays/1298844_DominionDog_LucidPJS_2000AtmospheresAIE.SC2Replay",
+            "bot1_name": "DominionDog",
+            "bot2_name": "LucidPJS"
+        },
+        {
+            "match": 1298719,
+            "type": "Player1Win",
+            "replay_file": "https://aiarena.net/media/replays/1298719_Dysnomia_sharkbot_GlitteringAshesAIE.SC2Replay",
+            "bot1_name": "Dysnomia",
+            "bot2_name": "sharkbot"
+        },
+        {
+            "match": 1298869,
+            "type": "Player2Win",
+            "replay_file": "https://aiarena.net/media/replays/1298869_LucidTJS_MilkWang1_HardwireAIE.SC2Replay",
+            "bot1_name": "LucidTJS",
+            "bot2_name": "MilkWang1"
+        },
+        {
+            "match": 1298721,
+            "type": "Player2Win",
+            "replay_file": "https://aiarena.net/media/replays/1298721_Dysnomia_Caninana_HardwireAIE.SC2Replay",
+            "bot1_name": "Dysnomia",
+            "bot2_name": "Caninana"
+        },
+        {
+            "match": 1298870,
+            "type": "Player2Win",
+            "replay_file": "https://aiarena.net/media/replays/1298870_LucidTJS_Omega2A_HardwireAIE.SC2Replay",
+            "bot1_name": "LucidTJS",
+            "bot2_name": "Omega2A"
+        },
+        {
+            "match": 1298747,
+            "type": "Player2Win",
+            "replay_file": "https://aiarena.net/media/replays/1298747_XenaT_MicroMachine_BlackburnAIE.SC2Replay",
+            "bot1_name": "XenaT",
+            "bot2_name": "MicroMachine"
+        },
+        {
+            "match": 1298901,
+            "type": "Player2Win",
+            "replay_file": "https://aiarena.net/media/replays/1298901_Ender_Crustacean_HardwireAIE.SC2Replay",
+            "bot1_name": "Ender",
+            "bot2_name": "Crustacean"
+        },
+        {
+            "match": 1298650,
+            "type": "Player2Win",
+            "replay_file": "https://aiarena.net/media/replays/1298650_negativeZero_Dysnomia_HardwireAIE.SC2Replay",
+            "bot1_name": "negativeZero",
+            "bot2_name": "Dysnomia"
+        },
+        {
+            "match": 1298864,
+            "type": "Player1Win",
+            "replay_file": "https://aiarena.net/media/replays/1298864_JaProBot_Monomi_CuriousMindsAIE.SC2Replay",
+            "bot1_name": "JaProBot",
+            "bot2_name": "Monomi"
+        },
+        {
+            "match": 1298714,
+            "type": "Player1Win",
+            "replay_file": "https://aiarena.net/media/replays/1298714_Dysnomia_MicroMachine_2000AtmospheresAIE.SC2Replay",
+            "bot1_name": "Dysnomia",
+            "bot2_name": "MicroMachine"
+        },
+        {
+            "match": 1298755,
+            "type": "Player2Win",
+            "replay_file": "https://aiarena.net/media/replays/1298755_XenaT_Chaosbot_BerlingradAIE.SC2Replay",
+            "bot1_name": "XenaT",
+            "bot2_name": "Chaosbot"
+        },
+        {
+            "match": 1298631,
+            "type": "Player2Win",
+            "replay_file": "https://aiarena.net/media/replays/1298631_smallBly_Darkness_HardwireAIE.SC2Replay",
+            "bot1_name": "smallBly",
+            "bot2_name": "Darkness"
+        },
+        {
+            "match": 1298006,
+            "type": "Player2Win",
+            "replay_file": "https://aiarena.net/media/replays/1298006_Ku6ikRu6ika_Ketroc_2000AtmospheresAIE.SC2Replay",
+            "bot1_name": "Ku6ikRu6ika",
+            "bot2_name": "Ketroc"
+        },
+        {
+            "match": 1298572,
+            "type": "Player1Win",
+            "replay_file": "https://aiarena.net/media/replays/1298572_SaShaBot_BaronessZuli_GlitteringAshesAIE.SC2Replay",
+            "bot1_name": "SaShaBot",
+            "bot2_name": "BaronessZuli"
+        },
+        {
+            "match": 1298613,
+            "type": "Player1Win",
+            "replay_file": "https://aiarena.net/media/replays/1298613_EvilZoe_negativeZero_GlitteringAshesAIE.SC2Replay",
+            "bot1_name": "EvilZoe",
+            "bot2_name": "negativeZero"
+        },
+        {
+            "match": 1298743,
+            "type": "Player2Win",
+            "replay_file": "https://aiarena.net/media/replays/1298743_Tyr_spudde_BerlingradAIE.SC2Replay",
+            "bot1_name": "Tyr",
+            "bot2_name": "spudde"
+        },
+        {
+            "match": 1298632,
+            "type": "Player1Win",
+            "replay_file": "https://aiarena.net/media/replays/1298632_smallBly_PhantomTest_HardwireAIE.SC2Replay",
+            "bot1_name": "smallBly",
+            "bot2_name": "PhantomTest"
+        },
+        {
+            "match": 1298708,
+            "type": "Player1Win",
+            "replay_file": "https://aiarena.net/media/replays/1298708_Eris_Caninana_CuriousMindsAIE.SC2Replay",
+            "bot1_name": "Eris",
+            "bot2_name": "Caninana"
+        },
+        {
+            "match": 1298596,
+            "type": "Player2Win",
+            "replay_file": "https://aiarena.net/media/replays/1298596_Zoe_negativeZero_BlackburnAIE.SC2Replay",
+            "bot1_name": "Zoe",
+            "bot2_name": "negativeZero"
+        },
+        {
+            "match": 1298777,
+            "type": "Player1Win",
+            "replay_file": "https://aiarena.net/media/replays/1298777_BenBotBC_sharkbot_CuriousMindsAIE.SC2Replay",
+            "bot1_name": "BenBotBC",
+            "bot2_name": "sharkbot"
+        },
+        {
+            "match": 1298686,
+            "type": "Player2Win",
+            "replay_file": "https://aiarena.net/media/replays/1298686_QueenBot_Sajuuk_GlitteringAshesAIE.SC2Replay",
+            "bot1_name": "QueenBot",
+            "bot2_name": "Sajuuk"
+        },
+        {
+            "match": 1298640,
+            "type": "Player1Win",
+            "replay_file": "https://aiarena.net/media/replays/1298640_smallBly_RookieBot_CuriousMindsAIE.SC2Replay",
+            "bot1_name": "smallBly",
+            "bot2_name": "RookieBot"
+        },
+        {
+            "match": 1298929,
+            "type": "Player1Win",
+            "replay_file": "https://aiarena.net/media/replays/1298929_Crustacean_JanusBot_BlackburnAIE.SC2Replay",
+            "bot1_name": "Crustacean",
+            "bot2_name": "JanusBot"
+        },
+        {
+            "match": 1298580,
+            "type": "Player2Win",
+            "replay_file": "https://aiarena.net/media/replays/1298580_Xena_Eris_CuriousMindsAIE.SC2Replay",
+            "bot1_name": "Xena",
+            "bot2_name": "Eris"
+        },
+        {
+            "match": 1298823,
+            "type": "Player2Win",
+            "replay_file": "https://aiarena.net/media/replays/1298823_DadBot_Caninana_GlitteringAshesAIE.SC2Replay",
+            "bot1_name": "DadBot",
+            "bot2_name": "Caninana"
+        },
+        {
+            "match": 1298661,
+            "type": "Player1Win",
+            "replay_file": "https://aiarena.net/media/replays/1298661_negativeZero_spudde_HardwireAIE.SC2Replay",
+            "bot1_name": "negativeZero",
+            "bot2_name": "spudde"
+        },
+        {
+            "match": 1298083,
+            "type": "Player2Win",
+            "replay_file": "https://aiarena.net/media/replays/1298083_XenaT_Ketroc_BerlingradAIE.SC2Replay",
+            "bot1_name": "XenaT",
+            "bot2_name": "Ketroc"
+        },
+        {
+            "match": 1298674,
+            "type": "Player1Win",
+            "replay_file": "https://aiarena.net/media/replays/1298674_Ku6ikRu6ika_LucidPJS_HardwireAIE.SC2Replay",
+            "bot1_name": "Ku6ikRu6ika",
+            "bot2_name": "LucidPJS"
+        },
+        {
+            "match": 1298565,
+            "type": "Player2Win",
+            "replay_file": "https://aiarena.net/media/replays/1298565_SaShaBot_FaxBot_BlackburnAIE.SC2Replay",
+            "bot1_name": "SaShaBot",
+            "bot2_name": "FaxBot"
+        },
+        {
+            "match": 1298833,
+            "type": "Player1Win",
+            "replay_file": "https://aiarena.net/media/replays/1298833_LucidZJS_Crustacean_BlackburnAIE.SC2Replay",
+            "bot1_name": "LucidZJS",
+            "bot2_name": "Crustacean"
+        },
+        {
+            "match": 1298741,
+            "type": "Player1Win",
+            "replay_file": "https://aiarena.net/media/replays/1298741_Tyr_LucidPJS_BerlingradAIE.SC2Replay",
+            "bot1_name": "Tyr",
+            "bot2_name": "LucidPJS"
+        },
+        {
+            "match": 1298444,
+            "type": "Player1Win",
+            "replay_file": "https://aiarena.net/media/replays/1298444_SF4G_BillyBot_Flat482Spawns.SC2Replay",
+            "bot1_name": "SF4G",
+            "bot2_name": "BillyBot"
+        },
+        {
+            "match": 1298367,
+            "type": "Player1Win",
+            "replay_file": "https://aiarena.net/media/replays/1298367_basic_bot_MFBS_Flat482Spawns.SC2Replay",
+            "bot1_name": "basic_bot",
+            "bot2_name": "MFBS"
+        },
+        {
+            "match": 1298092,
+            "type": "Player2Win",
+            "replay_file": "https://aiarena.net/media/replays/1298092_Darkness_Ketroc_BlackburnAIE.SC2Replay",
+            "bot1_name": "Darkness",
+            "bot2_name": "Ketroc"
+        },
+        {
+            "match": 1298876,
+            "type": "Player1Win",
+            "replay_file": "https://aiarena.net/media/replays/1298876_sharkbot_spudde_2000AtmospheresAIE.SC2Replay",
+            "bot1_name": "sharkbot",
+            "bot2_name": "spudde"
+        },
+        {
+            "match": 1298469,
+            "type": "Player1Win",
+            "replay_file": "https://aiarena.net/media/replays/1298469_lurk1jiahui_ArchBaronessRuri_Flat482Spawns.SC2Replay",
+            "bot1_name": "lurk1jiahui",
+            "bot2_name": "ArchBaronessRuri"
+        },
+        {
+            "match": 1298443,
+            "type": "Player2Win",
+            "replay_file": "https://aiarena.net/media/replays/1298443_SF4G_Winckel_Flat48_Flat482Spawns.SC2Replay",
+            "bot1_name": "SF4G",
+            "bot2_name": "Winckel_Flat48"
+        },
+        {
+            "match": 1298405,
+            "type": "Player1Win",
+            "replay_file": "https://aiarena.net/media/replays/1298405_MFBS_ProFarTBOT_Flat482Spawns.SC2Replay",
+            "bot1_name": "MFBS",
+            "bot2_name": "ProFarTBOT"
+        },
+        {
+            "match": 1298378,
+            "type": "Player2Win",
+            "replay_file": "https://aiarena.net/media/replays/1298378_basic_bot_Winckel_Flat48_Flat482Spawns.SC2Replay",
+            "bot1_name": "basic_bot",
+            "bot2_name": "Winckel_Flat48"
+        },
+        {
+            "match": 1298480,
+            "type": "Player1Win",
+            "replay_file": "https://aiarena.net/media/replays/1298480_KetrocFlat48_ascyZerg003_Flat482Spawns.SC2Replay",
+            "bot1_name": "KetrocFlat48",
+            "bot2_name": "ascyZerg003"
+        },
+        {
+            "match": 1298418,
+            "type": "Player1Win",
+            "replay_file": "https://aiarena.net/media/replays/1298418_Nightmare_ProFarTBOT_Flat482Spawns.SC2Replay",
+            "bot1_name": "Nightmare",
+            "bot2_name": "ProFarTBOT"
+        },
+        {
+            "match": 1298421,
+            "type": "Player1Win",
+            "replay_file": "https://aiarena.net/media/replays/1298421_Nightmare_BillyBot_Flat482Spawns.SC2Replay",
+            "bot1_name": "Nightmare",
+            "bot2_name": "BillyBot"
+        },
+        {
+            "match": 1298382,
+            "type": "Player1Win",
+            "replay_file": "https://aiarena.net/media/replays/1298382_EmptySeat_MFBS_Flat482Spawns.SC2Replay",
+            "bot1_name": "EmptySeat",
+            "bot2_name": "MFBS"
+        },
+        {
+            "match": 1298495,
+            "type": "Player1Win",
+            "replay_file": "https://aiarena.net/media/replays/1298495_ArchBaronessRuri_ascyZerg003_Flat482Spawns.SC2Replay",
+            "bot1_name": "ArchBaronessRuri",
+            "bot2_name": "ascyZerg003"
+        },
+        {
+            "match": 1298431,
+            "type": "Player1Win",
+            "replay_file": "https://aiarena.net/media/replays/1298431_WhoNeedsArmy_ArchBaronessRuri_Flat482Spawns.SC2Replay",
+            "bot1_name": "WhoNeedsArmy",
+            "bot2_name": "ArchBaronessRuri"
+        },
+        {
+            "match": 1298377,
+            "type": "Player1Win",
+            "replay_file": "https://aiarena.net/media/replays/1298377_basic_bot_ArchBaronessRuri_Flat482Spawns.SC2Replay",
+            "bot1_name": "basic_bot",
+            "bot2_name": "ArchBaronessRuri"
+        },
+        {
+            "match": 1298385,
+            "type": "Player2Win",
+            "replay_file": "https://aiarena.net/media/replays/1298385_EmptySeat_SF4G_Flat482Spawns.SC2Replay",
+            "bot1_name": "EmptySeat",
+            "bot2_name": "SF4G"
+        },
+        {
+            "match": 1298544,
+            "type": "Player1Win",
+            "replay_file": "https://aiarena.net/media/replays/1298544_XenaT_RookieBot_sc2-ai-cup-2022.SC2Replay",
+            "bot1_name": "XenaT",
+            "bot2_name": "RookieBot"
+        },
+        {
+            "match": 1298540,
+            "type": "Player1Win",
+            "replay_file": "https://aiarena.net/media/replays/1298540_MicroMachinePalacky_RookieBot_sc2-ai-cup-2022.SC2Replay",
+            "bot1_name": "MicroMachinePalacky",
+            "bot2_name": "RookieBot"
+        },
+        {
+            "match": 1298526,
+            "type": "Player2Win",
+            "replay_file": "https://aiarena.net/media/replays/1298526_Bot2_XenaT_sc2-ai-cup-2022.SC2Replay",
+            "bot1_name": "Bot2",
+            "bot2_name": "XenaT"
+        },
+        {
+            "match": 1298547,
+            "type": "Player1Win",
+            "replay_file": "https://aiarena.net/media/replays/1298547_MechaSharkPalacky_RookieBot_sc2-ai-cup-2022.SC2Replay",
+            "bot1_name": "MechaSharkPalacky",
+            "bot2_name": "RookieBot"
+        },
+        {
+            "match": 1298519,
+            "type": "Player2Win",
+            "replay_file": "https://aiarena.net/media/replays/1298519_MarineRush_XenaT_sc2-ai-cup-2022.SC2Replay",
+            "bot1_name": "MarineRush",
+            "bot2_name": "XenaT"
+        },
+        {
+            "match": 1298590,
+            "type": "Player2Win",
+            "replay_file": "https://aiarena.net/media/replays/1298590_Xena_LucidPJS_2000AtmospheresAIE.SC2Replay",
+            "bot1_name": "Xena",
+            "bot2_name": "LucidPJS"
+        },
+        {
+            "match": 1297958,
+            "type": "Player1Win",
+            "replay_file": "https://aiarena.net/media/replays/1297958_EvilZoe_Ketroc_2000AtmospheresAIE.SC2Replay",
+            "bot1_name": "EvilZoe",
+            "bot2_name": "Ketroc"
+        },
+        {
+            "match": 1298919,
+            "type": "Player1Win",
+            "replay_file": "https://aiarena.net/media/replays/1298919_spudde_Caninana_BlackburnAIE.SC2Replay",
+            "bot1_name": "spudde",
+            "bot2_name": "Caninana"
+        }
+    ]
+}
