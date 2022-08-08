@@ -140,6 +140,10 @@ def startbattle():
     removechatcmd = "ReplayChatRemove.exe \"" + replaysave + "\""
     print("Running command:\n" + removechatcmd)
     os.system(removechatcmd)
+    
+    #run voice announcement trigger
+    tts = gTTS(str(battle['bot1_name']) + " versus " + str(battle['bot2_name']), lang='en')
+    os.system(tts)
 
     # run Observer
     cmd = "ExampleObserver.exe -p \"" + replaysave + "\""
