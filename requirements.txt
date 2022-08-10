@@ -4,7 +4,7 @@ chardet==3.0.4
 multidict==6.0.2
 pynput==1.7.6
 requests==2.22.0
-twitchio==2.1.4
+twitchio==2.4.0
 websockets==10.1
 yarl==1.7.2
 gtts==2.2.3
