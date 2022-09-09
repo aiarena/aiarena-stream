@@ -1,5 +1,5 @@
 attrs==21.4.0
-certifi==2021.10.8
+certifi==2022.6.15.1
 chardet==3.0.4
 multidict==6.0.2
 pynput==1.7.6
