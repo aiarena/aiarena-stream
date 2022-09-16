@@ -140,7 +140,14 @@ def startbattle():
     removechatcmd = "ReplayChatRemove.exe \"" + replaysave + "\""
     print("Running command:\n" + removechatcmd)
     os.system(removechatcmd)
-
+    
+    # Text to speech match announcement
+    tts = gTTS(str(battle['bot1_name']) + " versus " + str(battle['bot2_name']), lang='en')
+    tts_file_name = os.path.join(os.path.abspath(os.getcwd()), 'current_game.mp3')
+    tts.save(tts_file_name)
+    playsound.playsound(tts_file_name)
+    os.remove(tts_file_name)
+    
     # run Observer
     cmd = "ExampleObserver.exe -p \"" + replaysave + "\""
     if hasattr(config, 'sc2_executable') and config.sc2_executable is not None:
@@ -151,12 +158,7 @@ def startbattle():
     os.system(cmd)
     # os.system("ExampleObserver.exe --Path \"" + replaysave + "\" --data_version B89B5D6FA7CBF6452E721311BFBC6CB2")
 
-    # Text to speech match announcement
-    tts = gTTS(str(battle['bot1_name']) + " versus " + str(battle['bot2_name']), lang='en')
-    tts_file_name = os.path.join(os.path.abspath(os.getcwd()), 'current_game.mp3')
-    tts.save(tts_file_name)
-    playsound.playsound(tts_file_name)
-    os.remove(tts_file_name)
+
 
 
 # Main Loop
