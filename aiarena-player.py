@@ -118,6 +118,9 @@ def startbattle():
         bot2_competition_data = get_competition_participations_data(bot2_data["id"], round_data["competition"])["results"][0]
         f.write("{0: <20} ELO: {1} WIN: {2:.2%}\n".format(bot1_name, str(bot1_competition_data["elo"]), bot1_competition_data["win_perc"] / 100.0))
         f.write("{0: <20} ELO: {1} WIN: {2:.2%}\n".format(bot2_name, str(bot2_competition_data["elo"]), bot2_competition_data["win_perc"] / 100.0))
+    else:
+        f.write("{0: <20} ELO: N/A WIN: N/A\n".format(bot1_name))
+        f.write("{0: <20} ELO: N/A WIN: N/A\n".format(bot2_name))
 
     f.close()
 
