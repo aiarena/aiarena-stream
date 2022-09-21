@@ -105,8 +105,6 @@ def startbattle():
     round_data = retrieve_round_data(match_data["round"])
     bot1_data = get_bot_data_by_name(bot1_name)["results"][0]
     bot2_data = get_bot_data_by_name(bot2_name)["results"][0]
-    bot1_competition_data = get_competition_participations_data(bot1_data["id"], round_data["competition"])["results"][0]
-    bot2_competition_data = get_competition_participations_data(bot2_data["id"], round_data["competition"])["results"][0]
 
     map_data = retrieve_map_data(match_data["map"])
 
@@ -114,9 +112,13 @@ def startbattle():
 
     f = open(statefile, "w")
     f.write("Match: https://aiarena.net/matches/" + str(match) + "/\n")
-    
-    f.write("{0: <20} ELO: {1} WIN: {2:.2%}\n".format(bot1_name, str(bot1_competition_data["elo"]), bot1_competition_data["win_perc"] / 100.0))
-    f.write("{0: <20} ELO: {1} WIN: {2:.2%}\n".format(bot2_name, str(bot2_competition_data["elo"]), bot2_competition_data["win_perc"] / 100.0))
+
+    if "competition" in round_data:
+        bot1_competition_data = get_competition_participations_data(bot1_data["id"], round_data["competition"])["results"][0]
+        bot2_competition_data = get_competition_participations_data(bot2_data["id"], round_data["competition"])["results"][0]
+        f.write("{0: <20} ELO: {1} WIN: {2:.2%}\n".format(bot1_name, str(bot1_competition_data["elo"]), bot1_competition_data["win_perc"] / 100.0))
+        f.write("{0: <20} ELO: {1} WIN: {2:.2%}\n".format(bot2_name, str(bot2_competition_data["elo"]), bot2_competition_data["win_perc"] / 100.0))
+
     f.close()
 
     if not download_map(map_data):
