@@ -61,45 +61,45 @@ class Bot(commands.Bot):
 
     @commands.command(name='restart', aliases=['r'])
     async def restart_stream_command(self, ctx: commands.Context):
-        if ctx.author.is_mod:
-            await ctx.send(f'Okay {ctx.author.name} - I will restart the stream! - Please wait')
-            keyboard = Controller()
-            keyboard.press(Key.ctrl)
-            keyboard.press(']')
-            keyboard.release(']')
+        # if ctx.author.is_mod:
+        await ctx.send(f'Okay {ctx.author.name} - I will restart the stream! - Please wait')
+        keyboard = Controller()
+        keyboard.press(Key.ctrl)
+        keyboard.press(']')
+        keyboard.release(']')
 
-            keyboard.release(Key.ctrl)
-            time.sleep(1)
-            keyboard.press(Key.ctrl)
-            keyboard.press('[')
-            keyboard.release('[')
-            keyboard.release(Key.ctrl)
+        keyboard.release(Key.ctrl)
+        time.sleep(1)
+        keyboard.press(Key.ctrl)
+        keyboard.press('[')
+        keyboard.release('[')
+        keyboard.release(Key.ctrl)
 
     @commands.command(name='next', aliases=['n'])
     async def next_command(self, ctx: commands.Context):
-        if ctx.author.is_mod:
-            await ctx.send(f'Okay {ctx.author.name} - I will restart Sc2! - Please wait')
-            os.system("taskkill /f /im SC2_x64.exe")
-            os.system("taskkill /f /im ExampleObserver.exe")
+        # if ctx.author.is_mod:
+        await ctx.send(f'Okay {ctx.author.name} - I will restart Sc2! - Please wait')
+        os.system("taskkill /f /im SC2_x64.exe")
+        os.system("taskkill /f /im ExampleObserver.exe")
 
     @commands.command(name='queue', aliases=['q'])
     async def queue_match_command(self, ctx: commands.Context):
-        if ctx.author.is_mod:
-            content = ctx.message.content
-            if content[:7] == '!queue ':
-                match_id = content[7:]
-            elif content[:3] == '!q ':
-                match_id = content[3:]
-            else:  # empty command
-                queue = get_queue()
-                await ctx.send(f'Current queue:\n' + queue)
-                return
+        # if ctx.author.is_mod:
+        content = ctx.message.content
+        if content[:7] == '!queue ':
+            match_id = content[7:]
+        elif content[:3] == '!q ':
+            match_id = content[3:]
+        else:  # empty command
+            queue = get_queue()
+            await ctx.send(f'Current queue:\n' + queue)
+            return
 
-            if is_match_id(match_id):
-                queue_match_replay(int(match_id))
-                await ctx.send(f'Match ID {match_id} queued')
-            else:
-                await ctx.send(f'Sorry {ctx.author.name}, please supply a valid match id.')
+        if is_match_id(match_id):
+            queue_match_replay(int(match_id))
+            await ctx.send(f'Match ID {match_id} queued')
+        else:
+            await ctx.send(f'Sorry {ctx.author.name}, please supply a valid match id.')
 
     @commands.command(name='link', aliases=['l'])
     async def queue_command(self, ctx: commands.Context):
