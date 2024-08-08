@@ -23,20 +23,26 @@ if not os.path.exists(temp_path):
 
 already_visited = []
 
+
 def get_bot_data_by_name(bot_name):
-    r = requests.get(f'https://aiarena.net/api/bots/?name={bot_name}', headers={'Authorization': "Token " + config.token})
+    r = requests.get(f'https://aiarena.net/api/bots/?name={bot_name}',
+                     headers={'Authorization': "Token " + config.token})
     data = json.loads(r.text)
     return data
-    
+
+
 def retrieve_round_data(round_id):
     r = requests.get(f'https://aiarena.net/api/rounds/{round_id}', headers={'Authorization': "Token " + config.token})
     data = json.loads(r.text)
     return data
 
+
 def get_competition_participations_data(bot_id, competition):
-    r = requests.get(f'https://sc2ai.net/api/competition-participations/?bot={bot_id}&competition={competition}', headers={'Authorization': "Token " + config.token})
+    r = requests.get(f'https://aiarena.net/api/competition-participations/?bot={bot_id}&competition={competition}',
+                     headers={'Authorization': "Token " + config.token})
     data = json.loads(r.text)
     return data
+
 
 def retrieve_match_data(match_id):
     r = requests.get(f'https://aiarena.net/api/matches/{match_id}', headers={'Authorization': "Token " + config.token})
@@ -66,19 +72,21 @@ def startbattle():
     # delete temp files
     tempfilelist = glob.glob(os.path.join(temp_path, "*.*"))
     for tempfile in tempfilelist:
-       os.remove(tempfile)
+        os.remove(tempfile)
 
     queued_match_id = queue_pop_next_match()
     if queued_match_id is not None:
         print(f"Playing queued match id: {queued_match_id}")
-        r = requests.get(f'https://aiarena.net/api/results/?match={queued_match_id}', headers={'Authorization': "Token " + config.token})
+        r = requests.get(f'https://aiarena.net/api/results/?match={queued_match_id}',
+                         headers={'Authorization': "Token " + config.token})
         data = json.loads(r.text)
         battle = data['results'][0]
         already_visited.append(battle['match'])
     else:
         print("No matches queued. Searching for a recent replay.")
         # get replay from API
-        r = requests.get('https://aiarena.net/api/stream/next-replay/', headers={'Authorization': "Token " + config.token})
+        r = requests.get('https://aiarena.net/api/stream/next-replay/',
+                         headers={'Authorization': "Token " + config.token})
         data = json.loads(r.text)
 
         # If there is no new games, reset.
@@ -114,10 +122,14 @@ def startbattle():
     f.write("Match: https://aiarena.net/matches/" + str(match) + "/\n")
 
     if "competition" in round_data:
-        bot1_competition_data = get_competition_participations_data(bot1_data["id"], round_data["competition"])["results"][0]
-        bot2_competition_data = get_competition_participations_data(bot2_data["id"], round_data["competition"])["results"][0]
-        f.write("{0: <20} ELO: {1} WIN: {2:.2%}\n".format(bot1_name, str(bot1_competition_data["elo"]), bot1_competition_data["win_perc"] / 100.0))
-        f.write("{0: <20} ELO: {1} WIN: {2:.2%}\n".format(bot2_name, str(bot2_competition_data["elo"]), bot2_competition_data["win_perc"] / 100.0))
+        bot1_competition_data = \
+        get_competition_participations_data(bot1_data["id"], round_data["competition"])["results"][0]
+        bot2_competition_data = \
+        get_competition_participations_data(bot2_data["id"], round_data["competition"])["results"][0]
+        f.write("{0: <20} ELO: {1} WIN: {2:.2%}\n".format(bot1_name, str(bot1_competition_data["elo"]),
+                                                          bot1_competition_data["win_perc"] / 100.0))
+        f.write("{0: <20} ELO: {1} WIN: {2:.2%}\n".format(bot2_name, str(bot2_competition_data["elo"]),
+                                                          bot2_competition_data["win_perc"] / 100.0))
     else:
         f.write("{0: <20} ELO: N/A WIN: N/A\n".format(bot1_name))
         f.write("{0: <20} ELO: N/A WIN: N/A\n".format(bot2_name))
@@ -145,25 +157,21 @@ def startbattle():
     removechatcmd = "ReplayChatRemove.exe \"" + replaysave + "\""
     print("Running command:\n" + removechatcmd)
     os.system(removechatcmd)
-    
+
     # Text to speech match announcement
     tts = gTTS(str(battle['bot1_name']) + " versus " + str(battle['bot2_name']), lang='en')
     tts_file_name = os.path.join(os.path.abspath(os.getcwd()), 'current_game.mp3')
     tts.save(tts_file_name)
     playsound.playsound(tts_file_name)
     os.remove(tts_file_name)
-    
+
     # run Observer
-    cmd = "ExampleObserver.exe -p \"" + replaysave + "\""
-    if hasattr(config, 'sc2_executable') and config.sc2_executable is not None:
-        cmd += f" -e \"{config.sc2_executable}\""
+    cmd = "java -jar AutoObserver.jar  -to  -pa=C:\\Users\\Administrator\\Desktop\\aiarena-twitch\\temp\\"
     if hasattr(config, 'sc2_data_version') and config.sc2_data_version is not None:
-        cmd += f" -d \"{config.sc2_data_version}\""
+        cmd += f" -da=\"{config.sc2_data_version}\""
     print("Running command:\n" + cmd)
     os.system(cmd)
     # os.system("ExampleObserver.exe --Path \"" + replaysave + "\" --data_version B89B5D6FA7CBF6452E721311BFBC6CB2")
-
-
 
 
 # Main Loop
